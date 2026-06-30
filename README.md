@@ -60,8 +60,8 @@ Total number of elements in histogram: <M>
 | File | Description |
 |------|-------------|
 | `Q1.cu` | CUDA kernels and host wrapper functions (min, max, histogram) — **written by me** |
-| `main.cpp` | Entry point — loads data, calls kernels, prints results *(provided by module)* |
-| `com2039.hpp` | Shared header — kernel declarations and constants *(provided by module)* |
+| `main.cpp` | Entry point: loads data, calls kernels, prints results *(provided by module)* |
+| `com2039.hpp` | Shared header: kernel declarations and constants *(provided by module)* |
 | `data_points.pbin` | Binary input dataset |
 | `report_6849160.pdf` | Written report covering design decisions and profiling analysis.|
 | `prof_out6849160.pfout` | Nsight profiler output |
