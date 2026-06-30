@@ -1,6 +1,6 @@
 # CUDA GPU-Accelerated Histogram
 
-A parallel computing project implementing a GPU-accelerated histogram over a large floating-point dataset using CUDA C++. The program computes the minimum and maximum values of the dataset via parallel reduction, then builds a 512-bin histogram — all running on the GPU.
+A parallel computing project implementing a GPU-accelerated histogram over a large floating-point dataset using CUDA C++. The program computes the minimum and maximum values of the dataset via parallel reduction, then builds a 512-bin histogram, all running on the GPU.
 
 This was completed as coursework for COM2039 (Parallel Computing) at the University of Surrey, exploring GPU memory hierarchies, parallel reduction patterns, and atomic operations. The CUDA implementation in `Q1.cu` is my own work; `main.cpp`, `com2039.hpp`, and the project scaffolding were provided by the module. Note that this repository contains only the implementation portion of the coursework. The full submission also included additional exam-style written questions covering topics such as warp divergence and task graph concurrency, which were answered in the report but have no associated code.
 
