@@ -14,11 +14,11 @@ This was completed as coursework for COM2039 (Parallel Computing) at the Univers
 
 ## Key implementation details
 
-**Parallel reduction** — both the min and max kernels use a tree-based shared memory reduction. Each block reduces its chunk of the input to a single value in shared memory, and the kernel is invoked iteratively until a single value remains across all blocks.
+**Parallel reduction**: both the min and max kernels use a tree-based shared memory reduction. Each block reduces its chunk of the input to a single value in shared memory, and the kernel is invoked iteratively until a single value remains across all blocks.
 
-**Shared memory histogram** — rather than having every thread atomically increment the global output histogram directly (which would cause severe memory contention at scale), each block maintains a private histogram in fast on-chip shared memory. Threads update this local copy with `atomicAdd`, and only once per block is the result merged into global memory. This reduces the number of expensive global atomic operations from O(N) to O(grid_size × 512).
+**Shared memory histogram**: rather than having every thread atomically increment the global output histogram directly (which would cause severe memory contention at scale), each block maintains a private histogram in fast on-chip shared memory. Threads update this local copy with `atomicAdd`, and only once per block is the result merged into global memory. This reduces the number of expensive global atomic operations from O(N) to O(grid_size × 512).
 
-**Error handling** — every CUDA API call is wrapped in error checking that prints a descriptive message and exits cleanly on failure.
+**Error handling**: every CUDA API call is wrapped in error checking that prints a descriptive message and exits cleanly on failure.
 
 ## Requirements
 
